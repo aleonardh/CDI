@@ -7,24 +7,29 @@ public class Principal4{
     if (args.length == 0){
             System.out.println("Not enough arguments!");
     }else {
-        int nT = Integer.ParseInt(args[0]);
+        int nT = Integer.parseInt(args[0]);
         ArrayList<Worker> threads = new ArrayList<>(nT);
         Matrix m = new Matrix(nT);
+        System.out.println("Matrix before changing values: \n");
+        m.printMatrix();
         for (int i = 0; i < nT;i++){
-            MyThread t = new MyThread(i, m);
+            Worker t = new Worker(i, m);
             threads.add(t);
         }
 
-        for (Thread t : threads){
+        for (Worker t : threads){
                 t.start();
         }
         try{
-            for(thread)
+            for(Worker t : threads){
+                t.join();
+            }
 
         }catch(InterruptedException e){
             System.out.println("Interrupted!!");
         }
-
+        System.out.println("Matrix after changing values: \n");
+        m.printMatrix();
 
         System.out.println("End of Program!!");
 

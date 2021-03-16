@@ -1,4 +1,4 @@
-import Java.util.Arrays;
+import java.util.Arrays;
 public class Matrix{
 
     int[][] matrix;
@@ -10,18 +10,18 @@ public class Matrix{
         this.matrix = new int[n][n];
         for (int i = 0; i < n; i++){
             for (int j = 0; j < n; j++){
-                x[i][j] = (i+j);
+                matrix[i][j] = (i+j);
             }
 
         }
 
     }
 
-    public int getHeight(Matrix matrix){
+    public int getHeight(){
         return this.n;
     }
 
-    public int getWidth(Matrix matrix){
+    public int getWidth(){
         return this.n;
     }
 
@@ -29,7 +29,7 @@ public class Matrix{
         matrix[i][j] *=2;
     }
 
-    public String toString(){
+    public void printMatrix(){
 //         for (int i = 0; i < n; i++){
 //             for (int j = 0; j < n; j++){
 //                 x[i][j] = (i+j);
@@ -37,7 +37,12 @@ public class Matrix{
 //
 //         }
 
-        System.out.println(Arrays.deepToString(matrix));
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
 
     }
 

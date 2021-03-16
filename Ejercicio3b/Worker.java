@@ -7,9 +7,8 @@ public class Worker extends Thread{
     }
 
     public void run(){
-        int posFila = (int) Thread.currentThread.getName();
         for(int i = 0; i< m.getWidth();i++){
-            m.setValPos(posFila, i);
+            m.setValPos(id, i);
         }
     }
 
