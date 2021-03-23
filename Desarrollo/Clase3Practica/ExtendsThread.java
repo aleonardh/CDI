@@ -25,7 +25,6 @@ public class ExtendsThread extends Thread{
             cbrt(d);
         }
         time.Stop(id);
-        //System.out.println("Tiempo: " + time.Elapsed() + ".");
     }
 //
 

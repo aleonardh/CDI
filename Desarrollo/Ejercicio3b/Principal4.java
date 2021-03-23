@@ -10,10 +10,11 @@ public class Principal4{
         int nT = Integer.parseInt(args[0]);
         ArrayList<Worker> threads = new ArrayList<>(nT);
         Matrix m = new Matrix(nT);
-        System.out.println("Matrix before changing values: \n");
-        m.printMatrix();
+        Timer timer = new Timer(nT);
+//        System.out.println("Matrix before changing values: \n");
+//        m.printMatrix();
         for (int i = 0; i < nT;i++){
-            Worker t = new Worker(i, m);
+            Worker t = new Worker(i, m, timer);
             threads.add(t);
         }
 
@@ -28,10 +29,12 @@ public class Principal4{
         }catch(InterruptedException e){
             System.out.println("Interrupted!!");
         }
-        System.out.println("Matrix after changing values: \n");
-        m.printMatrix();
-
-        System.out.println("End of Program!!");
+//
+//        System.out.println("Matrix after changing values: \n");
+//        m.printMatrix();
+//
+//        System.out.println("End of Program!!");
+        System.out.println(nT + " " + timer.Elapsed()  );
 
 
         }
